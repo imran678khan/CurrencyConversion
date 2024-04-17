@@ -4,7 +4,7 @@
 
 ### exchangeRates.json file is placed with CurrencyConversion project to read all exchange rate values.
 
-### to override exchange rate that we got from exchangeRates.json you need to set enviroment variables example set enviroment variable   USD_TO_INR:33 that will override the value found in exchangeRates.json file
+### to override exchange rate that we got from exchangeRates.json you need to set enviroment variables example set enviroment variable   USD_TO_INR:32 that will override the value found in exchangeRates.json file
 
 
 ### Middleware is configured so that if an error occur it will send the response in proper format and we can send custom response message in case of bad request or not found.

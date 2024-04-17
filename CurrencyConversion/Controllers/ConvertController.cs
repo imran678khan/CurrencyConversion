@@ -9,14 +9,10 @@ namespace CurrencyConversion.Controllers
     public class ConvertController : ControllerBase
     {
 
-        private readonly ILogger<ConvertController> _logger;
-
-
         private readonly IConversion _conversionService;
 
-        public ConvertController(ILogger<ConvertController> logger, IConversion conversionService)
+        public ConvertController(IConversion conversionService)
         {
-            _logger = logger;
             _conversionService = conversionService;
         }
 
@@ -42,7 +38,7 @@ namespace CurrencyConversion.Controllers
         /// <summary>
         /// Update exchange values in exchangeRates.json file so that we dont need to restart our application.
         /// </summary>
-        /// <returns>{exchangeRate: (decimal), convertedAmount : (decimal)} .</returns>
+        /// <returns>200.</returns>
         // GET: Convert
         [HttpPost("update-exchange-rate")]
         [ProducesResponseType(StatusCodes.Status200OK)]
