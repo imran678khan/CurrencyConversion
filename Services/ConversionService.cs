@@ -18,6 +18,13 @@ namespace Services
         public ConversionResponseDto GetCurrencyRates(string sourceCurrency, string targetCurrency, decimal amount)
         {
 
+            if (string.IsNullOrEmpty(sourceCurrency))
+                throw new BadRequestException("sourceCurrency is not valid");
+
+            if (string.IsNullOrEmpty(targetCurrency))
+                throw new BadRequestException("targetCurrency is not valid");
+
+
             var rootPath = _hostingEnvironment.ContentRootPath;
 
             var fullPath = Path.Combine(rootPath, "exchangeRates.json");
